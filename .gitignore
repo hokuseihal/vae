@@ -2,3 +2,4 @@
 .*
 __*
 !.gitignore
+!model/__init__.py
