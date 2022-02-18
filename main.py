@@ -55,7 +55,7 @@ if __name__ == "__main__":
     model = M[args.model]().to(device)
     optimizer = torch.optim.Adam(model.parameters())
     trainloader = torch.utils.data.DataLoader(
-        torchvision.datasets.CIFAR10(root='../data', transform=T.Compose([T.ToTensor()])), batch_size=args.batchsize,
+        torchvision.datasets.CIFAR10(download=True,root='../data', transform=T.Compose([T.ToTensor()])), batch_size=args.batchsize,
         shuffle=True, num_workers=cpu_count())
     valloader = torch.utils.data.DataLoader(
         torchvision.datasets.CIFAR10(train=False, transform=T.Compose([T.ToTensor()]), root='../data'),
